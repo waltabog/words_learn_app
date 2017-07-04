@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Checkbox Control</title>
+    <style>
+            p{color: blue;
+            font-size: 28px;}
+            
+            .submit {
+                background-color: #008CBA; /* Blue */
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 28px;
+             }
+
+            flag1 {
+              position: absolute;
+              padding: 20px 3px;
+            }
+            flag2 {
+              position: absolute;
+              padding: 20px 3px;
+            }
+
+            
+                        
+    </style>
+</head>
+
+	<body>
+	<form method="post" action="{{ url_for('get_answer',verite='oui')}}" autocomplete="off">
+	 	 <p> Please translate : {{word}}<br></p>
+
+	 	 <input type="text" name="translation_result" autofocus="autofocus" class="submit"><br>
+		 <input type="submit" value="Submit" style="display: none;">
+    
+	</form>
+ 
+    {% if language =='pinyin_flat' %}
+    
+    <flag1> <img src='/static/taiwan.jpg' width="400" height="200" > </flag1>
+    {% else %}
+
+    <flag2> <img src='/static/french.jpg' width="400" height="200"> </flag2>
+    {% endif %}
+	</body>
+</html>

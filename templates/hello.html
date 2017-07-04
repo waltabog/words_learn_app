@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+ <style>
+
+</style>
+   <body>
+      {% if answer==true_word %}
+      <h1> Correct!</h1>
+      <smile_happy> <img src='/static/smiley_happy.jpg' width="400" height="400"> </smile_happy>
+      {% else %}
+      <h1>FALSE!!</h1>
+      <smile_angry> <img src='/static/smile_angry.png' width="500" height="350"> </smile_angry>
+      {% endif %}
+      
+   </body>
+   <form method="post" action="{{ url_for('get_answer',verite='non')}}">
+		 <input type="submit" value="Press enter to continuer" autofocus="autofocus">
+	</form>
+</html>
